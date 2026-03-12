@@ -10,14 +10,18 @@ public class BankAccount {
     private double balance;
     private Person holder;
     private int accoutNumber;
+    private int account_type;
+    private int ssn;
+
 
     /**
      * Assuming the user create a new bankaccount without a deposit
      * THis constructor should do the job
      */
-    public BankAccount(Person holder){
+    public BankAccount(Person holder, int account_type){
         this.holder = holder;
         this.balance = 0;
+        this.account_type = account_type;
         this.accoutNumber = generateNumber();
     }
 
@@ -45,10 +49,6 @@ public class BankAccount {
         }
         this.balance =- amount;
         return "Remaining balance: " + this.balance;
-    }
-
-    public String getHolderName(){
-        return this.holder.getName();
     }
 
     public int generateNumber(){

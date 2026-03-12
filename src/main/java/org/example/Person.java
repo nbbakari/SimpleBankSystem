@@ -1,19 +1,48 @@
 package org.example;
 
 public class Person {
-        private String name;
-        private int age;
+    /**
+     * Basic info required by a bank branch when opening a bank account
+     *
+     */
 
-        public Person(String name, int age){
-            this.name = name;
-            this.age = age;
-        }
+    private String first_name;
+    private String last_name;
+    private char gender;
+    private int ssn;
 
-        public String getName(){
-            return this.name;
-        }
+    public Person(){
 
-        public int getAge(){
-            return this.age;
-        }
+    }
+
+    public Person(String first_name, String last_name, char gender, int ssn){
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.gender = gender;
+        this.ssn = ssn;
+    }
+
+    public String getName() {
+        return this.first_name + " " + this.last_name;
+    }
+
+
+    public char getGender(){
+        return this.gender;
+    }
+
+    //SETTERS
+
+    public String changeName(String first_name, String last_name){
+        this.first_name = first_name;
+        this.last_name = last_name;
+        return "Name change success";
+    }
+
+    public boolean changeSsn(int ssn){
+        this.ssn = ssn;
+        return true;
+    }
+
+
 }
